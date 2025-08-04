@@ -17,14 +17,14 @@ class Colores(StrEnum):
     # Paleta primaria
     NEGRO = '#000000'
     AZUL_GRISACEO = '#3a606b'
-    VERDE_CLARO = '#5bc0be'
+    VERDE_AZULADO = '#5bc0be'
     GRIS_CLARO = '#a7a9ac'
 
     # Paleta secundaria
-    NEGRO2 = '#0b132b'
+    NEGRO_AZULADO = '#0b132b'
     AZUL_OSCURO = '#1c2541'
     VERDE_PASTEL = '#9fedde'
-    VERDE_RARITO = '#6fffe9'
+    VERDE_CLARO = '#6fffe9'
     TURQUESA = '#1f7a8c'
 
 

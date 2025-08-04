@@ -75,7 +75,7 @@ def graficar_curvas_pv(
         curva.index,
         curva_orig,
         label='Original',
-        color=Colores.VERDE_CLARO,
+        color=Colores.VERDE_AZULADO,
         alpha=0.4,
     )
     plt.plot(
@@ -204,7 +204,7 @@ def graficar_eventos_edac(
     ax_freq.plot(
         df_day.index,
         df_day['freq'],
-        color=Colores.VERDE_CLARO,
+        color=Colores.VERDE_AZULADO,
         label='Frecuencia SENI',
     )
     ax_freq.axhline(
