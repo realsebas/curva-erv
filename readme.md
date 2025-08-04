@@ -50,8 +50,8 @@ curva-erv/
 Clona el repositorio y accede a la carpeta del proyecto:
 
 ```ps
-git clone https://github.com/realsebascurva-erv.git
-cd curva-erv/
+git clone https://github.com/realsebas/curva-erv.git
+cd curva-erv
 ```
 
 ### 2. Configurar y activar un entorno virtual (recomendado)
