@@ -40,7 +40,6 @@ def remuestrear_y_procesar(curvas, intervalo):
                     )
                 )
     resumen = pd.DataFrame(datos_resumen)
-    resumen.to_csv(f'{ruta_salida}/pendientes.csv')
     resumen.to_excel(f'{ruta_salida}/pendientes.xlsx')
 
 
