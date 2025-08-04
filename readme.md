@@ -45,53 +45,57 @@ curva-erv/
 
 ## Instalación
 
-1. **Clonar el repositorio**
+### 1. Clonar el repositorio
+
+Clona el repositorio y accede a la carpeta del proyecto:
+
+```ps
+git clone https://github.com/realsebascurva-erv.git
+cd curva-erv/
+```
+
+### 2. Configurar y activar un entorno virtual (recomendado)
   
-  ```ps
-  git clone https://github.com/realsebas/curva-erv.git
-  cd curva-erv/
-  ```
+Se recomienda usar un entorno virtual para evitar conflictos con instalaciones
+globales. Es tan sencillo como usar el módulo `venv`:
 
-2. **Configurar y activar un entorno virtual (recomendado)**
-  Es recomendable instalar un entorno virtual para evitar lidiar con
-  instalaciones globales. Es tan sencillo como usar el módulo `venv`:
+```ps
+python -m venv .venv
+```
 
-  ```ps
-  python -m venv .venv
-  ```
+Actívalo cada vez que vayas a trabajar con el proyecto:
+
+```ps
+.\.venv\Scripts\activate
+```
+
+> **Nota:** en Visual Studio Code, con la extensión de  Python instalada, los
+> entornos virtuales se activan automáticamente.
   
-  y activarlo (esto cada vez que se vaya a trabajar con el proyecto):
-  
-  ```ps
-  .\.venv\Scripts\activate
-  ```
+### 3. Instalar dependencias
 
-  En Visual Studio Code, con la extensión de Python instalada, los entornos
-  virtuales se activan automáticamente, así que este último paso no es
-  necesario.
-  
-3. **Instalar dependencias**
-  Con el entorno virtual activado:
+Con el entorno virtual activado, instala las dependencias:
 
-  ```ps
-  pip install -r requirements.txt
-  ```
+```ps
+pip install -r requirements.txt
+```
 
-4. **Verificar los datos de entrada**:
-  Es buena idea asegurarse que los archivos `Potencia Activa Centrales ERV.xlsx`
-  y `edac_data.xlsx`estén en la carpeta de `datos/`.
+### 4. Verificar los datos de entrada
+
+Asegúrate de que los archivos `Potencia Activa Centrales ERV.xlsx` y
+`edac_data.xlsx` se encuentren en la carpeta `datos/`.
 
 ## Uso
 
 Ejecuta el script principal para realizar ambos análisis (PV y EDAC):
 
-```bash
+```ps
 python main.py
 ```
 
-- **Análisis PV**: procesa datos de generación fotovoltaica, genera curvas
-  suavizadas en intervalos de 4 s, 1 min, 5 min y 15 min, calcula pendientes
-  máximas y mínimas y produce gráficos.
+- **Análisis PV**: procesa los datos de generación fotovoltaica, suaviza las
+  curvas en intervalos de 4 s, 1 min, 5 min y 15 min, calcula pendientes
+  máximas y mínimas y genera gráficos.
 
 - **Análisis EDAC**: detecta eventos de actuación del EDAC basados en caídas de
   frecuencia y genera gráficos y resúmenes.
@@ -107,13 +111,12 @@ python main.py
 
 - **Análisis EDAC** (`out/edac/`):
   - `graficas.pdf`: gráficos de eventos de actuación del EDAC por día.
-  - `eventos.xlsx`: resumen de los eventos detectados.
+  - `eventos.xlsx`: resumen de eventos detectados.
   - `plots/`: gráficos individuales en PNG.
 
 ## Notas
 
-- Los colores de los gráficos EDAC están definidos en `utils.py` (clase
-  `Colores`). Se utilizó la paleta de colores de la SIE.
-- Los parámetros de suavizado y detección de eventos están en
-  `suavizado_curvas.py` y `analisis_edac.py`. Probablemente sea buena idea
-  ajustarlos a necesidad.
+- Los colores de los gráficos del análisis EDAC están definidos en `utils.py`
+  dentro de la clase `Colores`. Se utilizó la paleta de colores de la SIE.
+- Los parámetros de suavizado y detección de eventos pueden ajustarse según
+  necesidad. Están definidos en `suavizado_curvas.py` y `analisis_edac.py`.
